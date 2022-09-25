@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Javascript - JSON
+	</title>
+</head>
+<body>
+	<script type="text/javascript"> 
+
+    // 2 Model Booking System with Referencing
+
+  let user1 = `[
+   {
+    "_id" : "63108322b92ebab68a3b7d07",
+    "username" : "nika27",
+    "firstName" : "Jeanica",
+    "lastName" : "Conchada",
+    "email" : "@gmail.com",
+    "password" : jeanicaconchada",
+    "mobileNumber" : "09493924059",
+    "isAdmin" : "false",
+    "enrollments" : [ 
+        {
+            "id" : "Enrollment1",
+            "courseId" : "631085a3b92ebab68a3b7dba",
+            "courseName" : "BS-IT",
+            "isPaid" : "Yes",
+            "dateEnrolled" : "09/01/2022"
+        }
+    ]
+}
+]`
+
+let user2 = `[
+   {
+    "_id" : "631087c3b92ebab68a3b7e7f",
+    "username" : "nika28",
+    "firstName" : "Jeanica",
+    "lastName" : "Conchada",
+    "email" : "nikaconcha@gmail.com",
+    "password" : "niki01",
+    "mobileNumber" : "09248594039",
+    "isAdmin" : "false",
+    "enrollments" : [ 
+        {
+            "id" : "Enrollment2",
+            "courseId" : "63108843b92ebab68a3b7ea6",
+            "courseName" : "BS-IT",
+            "isPaid" : "Yes",
+            "dateEnrolled" : "09/01/2022"
+        }
+    ]
+}
+]`
+
+let course1 = `[
+   {
+    "_id" : "631085a3b92ebab68a3b7dba",
+    "name" : "Jeanica",
+    "description" : "Student",
+    "price" : 10000,
+    "slots" : 50,
+    "schedule" : "Monday",
+    "instructor" : "Ms. Conchada",
+    "isActive" : "Yes",
+    "enrollees" : [ 
+        {
+            "id" : "Enrollment1",
+            "userId" : "63108322b92ebab68a3b7d07",
+            "userName(optional)" : "nika",
+            "isPaid" : "yes",
+            "dateEnrolled" : "09/01/2022"
+        }
+    ]
+}
+]`
+
+let course2 = `[
+    {
+    "_id" : "63108843b92ebab68a3b7ea6",
+    "name" : "Anika",
+    "description" : "Student",
+    "price" : 10000,
+    "slots" : 50,
+    "schedule" : "Monday",
+    "instructor" : "Ms. Conchada",
+    "isActive" : "Yes",
+    "enrollees" : [ 
+        {
+            "id" : "Enrollment1",
+            "userId" : "631087c3b92ebab68a3b7e7f",
+            "userName(optional)" : "niknik",
+            "isPaid" : "yes",
+            "dateEnrolled" : "09/01/2022"
+        }
+    ]
+}
+]`
+
+    console.log(user1,user2,course1,course2);
+
+    console.log(JSON.parse(user1)[0].username);
+    console.log(JSON.parse(user1)[0]._id);    
+    console.log(JSON.parse(user1)[0].enrollments);  
+ 
+    console.log(JSON.parse(user2)[0].username);
+    console.log(JSON.parse(user2)[0]._id);    
+    console.log(JSON.parse(user2)[0].enrollments);  
+   
+    console.log(JSON.parse(course1)[0].name);
+    console.log(JSON.parse(course1)[0]._id);
+    console.log(JSON.parse(course1)[0].enrollees);
+    
+    console.log(JSON.parse(course2)[0].name);
+    console.log(JSON.parse(course2)[0]._id);
+    console.log(JSON.parse(course2)[0].enrollees);
+    
+  // 3 Model Booking System with Referencing
+  
+    let enrollment1 = `[
+        {
+        "_id" : "63109025b92ebab68a3b7ff0",
+        "id" : "Enrollment1",
+        "userId" : "63108322b92ebab68a3b7d07",
+        "userName(optional)" : "nika27",
+        "courseId" : "631085a3b92ebab68a3b7dba",
+        "courseName(optional)" : "BS-IT",
+        "isPaid" : "Yes",
+        "dateEnrolled" : "09/01/2022"
+    }
+]`
+    let enrollment2 = `[
+        {
+        "_id" : "6310908fb92ebab68a3b800c",
+        "id" : "Enrollment2",
+        "userId" : "631087c3b92ebab68a3b7e7f",
+        "userName(optional)" : "nika28",
+        "courseId" : "63108843b92ebab68a3b7ea6",
+        "courseName(optional)" : "BS-IT",
+        "isPaid" : "Yes",
+        "dateEnrolled" : "09/01/2022"
+    }
+]`
+    console.log(enrollment1,enrollment2);
+
+    console.log(JSON.parse(enrollment1)[0].id);
+    console.log(JSON.parse(enrollment1)[0].userId);
+    console.log(JSON.parse(enrollment1)[0].courseId);
+
+    console.log(JSON.parse(enrollment2)[0].id);
+    console.log(JSON.parse(enrollment2)[0].userId);
+    console.log(JSON.parse(enrollment2)[0].courseId);
+
+
+
+
+    </script>
+</body>
+</html> 
